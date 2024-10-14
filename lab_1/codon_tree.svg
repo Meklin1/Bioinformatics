@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg width="1768" height="916" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g style="stroke:black;fill:lightgreen" transform="translate(30,30)">
+<line x1="809" y1="565" x2="809" y2="626" style="stroke:blue; stroke-width:1"/>
+<line x1="809" y1="626" x2="1205" y2="626" style="stroke:blue; stroke-width:1"/>
+<line x1="809" y1="565" x2="809" y2="504" style="stroke:blue; stroke-width:1"/>
+<line x1="809" y1="504" x2="1205" y2="504" style="stroke:blue; stroke-width:1"/>
+<line x1="412" y1="656" x2="412" y2="748" style="stroke:blue; stroke-width:1"/>
+<line x1="412" y1="748" x2="809" y2="748" style="stroke:blue; stroke-width:1"/>
+<line x1="16" y1="654" x2="16" y2="870" style="stroke:blue; stroke-width:1"/>
+<line x1="16" y1="870" x2="412" y2="870" style="stroke:blue; stroke-width:1"/>
+<line x1="1205" y1="77" x2="1205" y2="138" style="stroke:blue; stroke-width:1"/>
+<line x1="1205" y1="138" x2="1602" y2="138" style="stroke:blue; stroke-width:1"/>
+<line x1="1205" y1="77" x2="1205" y2="16" style="stroke:blue; stroke-width:1"/>
+<line x1="1205" y1="16" x2="1602" y2="16" style="stroke:blue; stroke-width:1"/>
+<line x1="809" y1="168" x2="809" y2="260" style="stroke:blue; stroke-width:1"/>
+<line x1="809" y1="260" x2="1205" y2="260" style="stroke:blue; stroke-width:1"/>
+<line x1="412" y1="275" x2="412" y2="382" style="stroke:blue; stroke-width:1"/>
+<line x1="412" y1="382" x2="809" y2="382" style="stroke:blue; stroke-width:1"/>
+<line x1="412" y1="656" x2="412" y2="565" style="stroke:blue; stroke-width:1"/>
+<line x1="412" y1="565" x2="809" y2="565" style="stroke:blue; stroke-width:1"/>
+<line x1="16" y1="654" x2="16" y2="656" style="stroke:blue; stroke-width:1"/>
+<line x1="16" y1="656" x2="412" y2="656" style="stroke:blue; stroke-width:1"/>
+<line x1="809" y1="168" x2="809" y2="77" style="stroke:blue; stroke-width:1"/>
+<line x1="809" y1="77" x2="1205" y2="77" style="stroke:blue; stroke-width:1"/>
+<line x1="412" y1="275" x2="412" y2="168" style="stroke:blue; stroke-width:1"/>
+<line x1="412" y1="168" x2="809" y2="168" style="stroke:blue; stroke-width:1"/>
+<line x1="16" y1="654" x2="16" y2="275" style="stroke:blue; stroke-width:1"/>
+<line x1="16" y1="275" x2="412" y2="275" style="stroke:blue; stroke-width:1"/>
+<text x="416" y="877" font-weight = "10" font-family="verdana" fill="black" font-size="18">Lactococcus_phage</text>
+<text x="813" y="755" font-weight = "10" font-family="verdana" fill="black" font-size="18">coronavirus</text>
+<text x="1209" y="633" font-weight = "10" font-family="verdana" fill="black" font-size="18">U18337.1</text>
+<text x="1209" y="511" font-weight = "10" font-family="verdana" fill="black" font-size="18">KC821626.1</text>
+<text x="813" y="389" font-weight = "10" font-family="verdana" fill="black" font-size="18">KM389305.1</text>
+<text x="1209" y="267" font-weight = "10" font-family="verdana" fill="black" font-size="18">herpesvirus</text>
+<text x="1606" y="145" font-weight = "10" font-family="verdana" fill="black" font-size="18">adenovirus</text>
+<text x="1606" y="23" font-weight = "10" font-family="verdana" fill="black" font-size="18">NC_028697.1</text>
+</g></svg>
