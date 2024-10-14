@@ -84,30 +84,27 @@ def find_codon_seq_list(seq):
     codon_seq_list = []
 
     def process_strand(s):
-        codons = [s[i:i + 3] for i in range(0, len(s), 3)]  # Padalija seką į kodonus (po 3 nukleotidus)
         i = 0
-        while i < len(codons) - 1:
-            if codons[i] == START_CODON:  # Randa starto kodoną
+        while i < len(s) - 2:
+            if s[i:i + 3] == START_CODON: 
                 start_pos = i
-                i += 1
-                while i < len(codons) - 1 and codons[i] not in STOP_CODS:  # Ieško stop kodono
-                    if codons[i] == START_CODON:
-                        break                                          
-                    i += 1
-                if i < len(codons) - 1 and codons[i] in STOP_CODS:  # Randa stop kodoną
-                    end_pos = i + 1
-                    if((end_pos - start_pos) * 3 >= 100):  # Patikrina, ar ilgis yra daugiau nei 100 nukleotidų                  
-                        codon_seq_list.append(codons[start_pos:end_pos])  # Išsaugo seką, jei ji atitinka sąlygą
-            i += 1
+                i += 3 
+                while i < len(s) - 2 and s[i:i + 3] not in STOP_CODS:
+                    i += 3 
+                if i < len(s) - 2 and s[i:i + 3] in STOP_CODS:
+                    end_pos = i + 3
+                    if (end_pos - start_pos) >= 100: 
+                        codon_seq_list.append(s[start_pos:end_pos]) 
+            i += 1 
 
-    process_strand(seq)  # Apdoroja pradinę seką
-    process_strand(rev_seq)  # Apdoroja atvirkštinę seką
-
+    process_strand(seq) 
+    process_strand(rev_seq)
     return codon_seq_list
 
 # Funkcija, apskaičiuojanti kodonų ar dikodonų dažnius aminorūgščių sekoje
 def compute_codon_dicodon_frequencies(sequence, use_dicodon=False):
-    amino_acid_sequence = [codon_mappings[codon] for codon in sequence]  # Verčia kodonus į aminorūgščių seką
+    codons = [sequence[i:i + 3] for i in range(0, len(sequence), 3)]
+    amino_acid_sequence = [codon_mappings[codon] for codon in codons]  # Verčia kodonus į aminorūgščių seką
     amino_acid_freq = defaultdict(int)
     
     for amino_acid_index in range(0, len(amino_acid_sequence)):
@@ -128,9 +125,16 @@ def variance_across_sequences(all_sequences, limit = 5, use_dicodon=False):
     for virus_sequences in all_sequences:
         precomputed_freqs = [compute_codon_dicodon_frequencies(seq, use_dicodon) for seq in virus_sequences]  # Apskaičiuoja dažnius kiekvienai sekai
         
+        total_count = 0
+        for freqs in precomputed_freqs:
+            for codon, count in freqs.items():
+                total_count += count
+        
         for freqs in precomputed_freqs: 
             for codon, count in freqs.items():
-                all_freqs[codon].append(count)
+                all_freqs[codon].append(count / total_count)
+                
+        a = 5
     
     # Apskaičiuoja variaciją kiekvienam kodonui/dikodonui
     variances = {codon: np.var(counts) for codon, counts in all_freqs.items()}
@@ -179,7 +183,7 @@ if __name__ == '__main__':
     for file_name in file_names:
         for record in SeqIO.parse("code/viruses/" + file_name, "fasta"):  # Nuskaito kiekvieną seką iš failo
             names.append(record.id)  # Prideda sekos pavadinimą
-            seq = str(record.seq)
+            seq = str(record.seq).replace("\n", "") 
             codon_seq_list.append(find_codon_seq_list(seq))  # Randa kodonų sekas
             
     codon_distance_matrix = compute_distance_matrix(codon_seq_list)  
